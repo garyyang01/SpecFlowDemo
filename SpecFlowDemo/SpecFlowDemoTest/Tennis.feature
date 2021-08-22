@@ -20,7 +20,7 @@ Scenario: playerA 2 and playerB 0
 
 @3:0
 Scenario: playerA 3 and playerB 0 
-	Given playerA 1 and playerB 0
+	Given playerA 3 and playerB 0
 	When Get display score
 	Then the display score should be "Forty Love"
 

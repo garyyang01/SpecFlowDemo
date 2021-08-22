@@ -20,6 +20,11 @@ namespace SpecFlowDemo
             {
                 return "Thirty Love";
             }
+
+            if (playerAScore == 3 && playerBScore == 0)
+            {
+                return "Forty Love";
+            }
             return null;
         }
     }
