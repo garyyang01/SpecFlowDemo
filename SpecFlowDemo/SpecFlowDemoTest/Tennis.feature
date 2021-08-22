@@ -26,19 +26,19 @@ Scenario: playerA 3 and playerB 0
 
 @0:1
 Scenario: playerA 0 and playerB 1 
-	Given playerA 1 and playerB 0
+	Given playerA 0 and playerB 1
 	When Get display score
 	Then the display score should be "Love Fifteen"
 
 @0:2
 Scenario: playerA 0 and playerB 2 
-	Given playerA 1 and playerB 0
+	Given playerA 0 and playerB 2 
 	When Get display score
 	Then the display score should be "Love Thirty"
 
 @0:3
 Scenario: playerA 0 and playerB 3 
-	Given playerA 1 and playerB 0
+	Given playerA 0 and playerB 3 
 	When Get display score
 	Then the display score should be "Love Forty"
 
