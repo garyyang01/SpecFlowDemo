@@ -11,6 +11,11 @@ namespace SpecFlowDemo
             var displayScoreMapper=new List<String>(){"Love","Fifteen","Thirty","Forty"};
             if (playerAScore.Equals(playerBScore))
             {
+                if (playerAScore>=3)
+                {
+                    return "Deuce";
+                }
+
                 return $"{displayScoreMapper[playerAScore]} All";
             }
 
