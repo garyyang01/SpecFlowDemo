@@ -15,17 +15,10 @@ namespace SpecFlowDemo
             {
                 return playerAScore>=3 ? "Deuce" : $"{scoreMapper[playerAScore]} All";
             }
-            if (playerAScore.Equals(4) && playerBScore.Equals(3))
+            if (playerAScore+playerBScore>6)
             {
-                return $"{dominantPlayer[0]} {matchStatus[0]}";
-            }
-            if (playerAScore.Equals(5) && playerBScore.Equals(3))
-            {
-                return $"{dominantPlayer[0]} {matchStatus[1]}";
-            }
-            if (playerAScore.Equals(3) && playerBScore.Equals(4))
-            {
-                return $"{dominantPlayer[1]} {matchStatus[0]}";
+                return
+                    $"{dominantPlayer[(playerAScore > playerBScore) ? 0 : 1]} {matchStatus[Math.Abs(playerAScore - playerBScore) - 1]}";
             }
             return $"{scoreMapper[playerAScore]} {scoreMapper[playerBScore]}";
             
