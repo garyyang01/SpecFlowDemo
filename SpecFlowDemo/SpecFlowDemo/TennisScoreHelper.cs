@@ -11,12 +11,7 @@ namespace SpecFlowDemo
             var displayScoreMapper=new List<String>(){"Love","Fifteen","Thirty","Forty"};
             if (playerAScore.Equals(playerBScore))
             {
-                if (playerAScore>=3)
-                {
-                    return "Deuce";
-                }
-
-                return $"{displayScoreMapper[playerAScore]} All";
+                return playerAScore>=3 ? "Deuce" : $"{displayScoreMapper[playerAScore]} All";
             }
 
             return $"{displayScoreMapper[playerAScore]} {displayScoreMapper[playerBScore]}";
