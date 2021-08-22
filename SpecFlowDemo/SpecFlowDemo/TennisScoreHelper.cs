@@ -8,24 +8,14 @@ namespace SpecFlowDemo
     {
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
+            var displayScoreMapper=new List<String>(){"Love","Fifteen","Thirty","Forty"};
             if (playerAScore==0&&playerBScore==0)
             {
                 return "Love All";
             }
-            if (playerAScore == 1 && playerBScore == 0)
-            {
-                return "Fifteen Love";
-            }
-            if (playerAScore == 2 && playerBScore == 0)
-            {
-                return "Thirty Love";
-            }
 
-            if (playerAScore == 3 && playerBScore == 0)
-            {
-                return "Forty Love";
-            }
-            return null;
+            return $"{displayScoreMapper[playerAScore]} {displayScoreMapper[playerBScore]}";
+            
         }
     }
 }
