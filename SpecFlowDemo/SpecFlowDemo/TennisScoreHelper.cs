@@ -17,6 +17,10 @@ namespace SpecFlowDemo
             {
                 return "Player A Adv";
             }
+            if (playerAScore.Equals(5) && playerBScore.Equals(3))
+            {
+                return "Player A Win";
+            }
             return $"{displayScoreMapper[playerAScore]} {displayScoreMapper[playerBScore]}";
             
         }
