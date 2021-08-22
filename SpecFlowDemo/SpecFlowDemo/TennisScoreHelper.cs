@@ -9,9 +9,9 @@ namespace SpecFlowDemo
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
             var displayScoreMapper=new List<String>(){"Love","Fifteen","Thirty","Forty"};
-            if (playerAScore==0&&playerBScore==0)
+            if (playerAScore.Equals(playerBScore))
             {
-                return "Love All";
+                return $"{displayScoreMapper[playerAScore]} All";
             }
 
             return $"{displayScoreMapper[playerAScore]} {displayScoreMapper[playerBScore]}";
