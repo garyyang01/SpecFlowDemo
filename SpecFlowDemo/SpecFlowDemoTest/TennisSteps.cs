@@ -1,4 +1,7 @@
 ﻿using System;
+using FluentAssertions;
+using NUnit.Framework;
+using SpecFlowDemo;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowDemoTest
@@ -6,7 +9,11 @@ namespace SpecFlowDemoTest
     [Binding]
     public class TennisSteps
     {
-        private ScenarioContext _scenarioContext;
+        private readonly ScenarioContext _scenarioContext;
+        private const string DisplayScore = "DisplayScore";
+        private const string PlayerAScoreKey = "PlayerAScore";
+        private const string PlayerBScoreKey = "PlayerBScore";
+
         public TennisSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
@@ -14,19 +21,24 @@ namespace SpecFlowDemoTest
         [Given(@"playerA (.*) and playerB (.*)")]
         public void GivenPlayerAAndPlayerB(int playerAScore, int playerBScore)
         {
-            _scenarioContext.Pending();
+            _scenarioContext.Set(playerAScore,PlayerAScoreKey);
+            _scenarioContext.Set(playerBScore,PlayerBScoreKey);
         }
-        
+
         [When(@"Get display score")]
         public void WhenGetDisplayScore()
         {
-            _scenarioContext.Pending();
+            var playerAScore = _scenarioContext.Get<int>(PlayerAScoreKey);
+            var playerBScore = _scenarioContext.Get<int>( PlayerBScoreKey);
+
+            _scenarioContext.Set(TennisScoreHelper.GetDisplayScore(playerAScore, playerBScore), DisplayScore);
         }
         
         [Then(@"the display score should be ""(.*)""")]
-        public void ThenTheDisplayScoreShouldBe(string displayScore)
+        public void ThenTheDisplayScoreShouldBe(string expectedDisplayScore)
         {
-            _scenarioContext.Pending();
+            var calDisplayScore = _scenarioContext.Get<string>(DisplayScore);
+            expectedDisplayScore.Should().Be(calDisplayScore);
         }
     }
 }

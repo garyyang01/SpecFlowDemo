@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SpecFlowDemo
 {
-    public class TennisScoreHelper
+    public static class TennisScoreHelper
     {
-        public string GetDisplayScore(int playerAScore, int playerBScore)
+        public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
             if (playerAScore == 0 && playerBScore == 0)
             {
