@@ -12,7 +12,10 @@ namespace SpecFlowDemo
             {
                 return "Love All";
             }
-
+            if (playerAScore == 1 && playerBScore == 0)
+            {
+                return "Fifteen Love";
+            }
             return null;
         }
     }
