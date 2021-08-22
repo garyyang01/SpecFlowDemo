@@ -13,7 +13,10 @@ namespace SpecFlowDemo
             {
                 return playerAScore>=3 ? "Deuce" : $"{displayScoreMapper[playerAScore]} All";
             }
-
+            if (playerAScore.Equals(4) && playerBScore.Equals(3))
+            {
+                return "Player A Adv";
+            }
             return $"{displayScoreMapper[playerAScore]} {displayScoreMapper[playerBScore]}";
             
         }
